@@ -17,12 +17,7 @@
       <label for="idProductoConsulta">ID del Producto a Consultar:</label>
       <input type="text" class="form-control" id="idProductoConsulta" placeholder="Ingrese el ID del producto">
     </div>
-
-    <div class="form-group">
-      <label for="idproducto">ID:</label>
-      <input type="text" class="form-control" id="idproducto" readonly>
-    </div>
-    <!-- Título -->
+    
     <div class="form-group">
       <label for="titulo">Título:</label>
       <input type="text" class="form-control" id="titulo" readonly>
@@ -88,7 +83,6 @@
         return response.json();
       })
       .then(producto => {
-        document.getElementById('idproducto').value = producto.id;
         document.getElementById('titulo').value = producto.title;
         document.getElementById('precio').value = producto.price;
         document.getElementById('descripcion').value = producto.description;
