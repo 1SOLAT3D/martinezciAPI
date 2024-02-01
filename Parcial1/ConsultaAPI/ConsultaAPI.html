@@ -1,102 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Consulta de Producto</title>
+  <title>Consulta API</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="ConsultaAPI.css">
 </head>
+
 <body>
 
-<div class="container mt-5">
-  <h2 class="mb-4">Consulta de Producto</h2>
+  <div class="container mt-5">
+    <h2 class="mb-4">Fake Store API - Consulta de Producto</h2>
 
-  <form id="formularioProducto">
+    <form id="formularioProducto">
 
-    <div class="form-group">
-      <label for="idProductoConsulta">ID del Producto a Consultar:</label>
-      <input type="text" class="form-control" id="idProductoConsulta" placeholder="Ingrese el ID del producto">
-    </div>
+      <div class="form-group">
+        <label for="idProductoConsulta">ID del Producto a Consultar:</label>
+        <input type="text" class="form-control" id="idProductoConsulta" placeholder="Ingrese el ID del producto">
+      </div>
 
-    <div class="form-group">
-      <label for="titulo">Título:</label>
-      <input type="text" class="form-control" id="titulo" readonly>
-    </div>
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input type="text" class="form-control" id="titulo" readonly>
+      </div>
 
-    <div class="form-group">
-      <label for="precio">Precio:</label>
-      <input type="text" class="form-control" id="precio" readonly>
-    </div>
+      <div class="form-group">
+        <label for="precio">Precio:</label>
+        <input type="text" class="form-control" id="precio" readonly>
+      </div>
 
-    <div class="form-group">
-      <label for="descripcion">Descripción:</label>
-      <textarea class="form-control" id="descripcion" rows="3" readonly></textarea>
-    </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea class="form-control" id="descripcion" rows="3" readonly></textarea>
+      </div>
 
-    <div class="form-group">
-      <label for="categoria">Categoría:</label>
-      <input type="text" class="form-control" id="categoria" readonly>
-    </div>
+      <div class="form-group">
+        <label for="categoria">Categoría:</label>
+        <input type="text" class="form-control" id="categoria" readonly>
+      </div>
 
-    <div class="form-group" id="imagenProducto">
-      <label for="imagen">Imagen:</label>
-      <img src="" alt="Imagen del Producto" class="img-fluid" id="imagen">
-    </div>
+      <div class="form-group" id="imagenProducto">
+        <label for="imagen">Imagen:</label>
+        <img src="" alt="Imagen del Producto" class="img-fluid" id="imagen">
+      </div>
 
-    <div class="form-group">
-      <label for="rating">Rating:</label>
-      <input type="text" class="form-control" id="rating" readonly>
-    </div>
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input type="text" class="form-control" id="rating" readonly>
+      </div>
 
-    <div class="form-group">
-      <button type="button" class="btn btn-primary" onclick="limpiarCampos()">Limpiar Campos</button>
-      <button type="button" class="btn btn-success" onclick="consultarProducto()">Consultar</button>
-    </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" onclick="limpiarCampos()">Limpiar Campos</button>
+        <button type="button" class="btn btn-success" onclick="consultarProducto()">Consultar</button>
+      </div>
 
-  </form>
-</div>
+    </form>
+  </div>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-  function limpiarCampos() {
-    document.querySelectorAll('#formularioProducto input, #formularioProducto textarea').forEach(element => {
-      element.value = '';
-    });
-    document.getElementById('imagen').src = '';
-    document.getElementById('idProductoConsulta').value = '';
-  }
-
-  function consultarProducto() {
-    const idProducto = document.getElementById('idProductoConsulta').value;
-
-    if (!idProducto) {
-      alert('Por favor, ingrese el ID del producto a consultar.');
-      return;
+  <script>
+    function limpiarCampos() {
+      document.querySelectorAll('#formularioProducto input, #formularioProducto textarea').forEach(element => {
+        element.value = '';
+      });
+      document.getElementById('imagen').src = '';
+      document.getElementById('idProductoConsulta').value = '';
     }
 
-    fetch(`https://fakestoreapi.com/products/${idProducto}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Producto no encontrado');
-        }
-        return response.json();
-      })
-      .then(producto => {
-        document.getElementById('titulo').value = producto.title;
-        document.getElementById('precio').value = producto.price;
-        document.getElementById('descripcion').value = producto.description;
-        document.getElementById('categoria').value = producto.category;
-        document.getElementById('imagen').src = producto.image;
-        document.getElementById('rating').value = `Rate: ${producto.rating.rate}, Count: ${producto.rating.count}`;
-      })
-      .catch(error => {
-        alert(`Error: ${error.message}`);
-        console.error('Error:', error);
-      });
-  }
-</script>
+    function consultarProducto() {
+      const idProducto = document.getElementById('idProductoConsulta').value;
+
+      if (!idProducto) {
+        alert('Por favor, ingrese el ID del producto a consultar.');
+        return;
+      }
+
+      fetch(`https://fakestoreapi.com/products/${idProducto}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Producto no encontrado');
+          }
+          return response.json();
+        })
+        .then(producto => {
+          document.getElementById('titulo').value = producto.title;
+          document.getElementById('precio').value = producto.price;
+          document.getElementById('descripcion').value = producto.description;
+          document.getElementById('categoria').value = producto.category;
+          document.getElementById('imagen').src = producto.image;
+          document.getElementById('rating').value = `Rate: ${producto.rating.rate}, Count: ${producto.rating.count}`;
+        })
+        .catch(error => {
+          alert(`Error: ${error.message}`);
+          console.error('Error:', error);
+        });
+    }
+  </script>
 
 </body>
+
 </html>

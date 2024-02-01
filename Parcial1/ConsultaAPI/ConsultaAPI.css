@@ -1,65 +1,69 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 
 body {
-    background-color: #f8f9fa;
-  }
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+}
 
-  .container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
 
-  h2 {
-    text-align: center;
-    color: #007bff;
-  }
+h2 {
+  text-align: center;
+  color: #007bff;
+}
 
-  .form-group {
-    margin-bottom: 20px;
-  }
+.form-group {
+  margin-bottom: 20px;
+}
 
-  .btn-primary{
-    width: 100%;
-    background-color: #9d00ff;
-    border-color: #28a745;
-  }
+.btn-primary {
+  width: 100%;
+  background-color: #9d00ff;
+  border-color: #28a745;
+}
 
-  .btn-success {
-    width: 100%;
-    background-color: #972a37;
-    border-color: #28a745;
-  }
+.btn-success {
+  width: 100%;
+  background-color: #972a37;
+  border-color: #28a745;
+}
 
-  #idProductoConsulta {
-    width: 100%;
-    background-color: #ffc107;
-  }
+#idProductoConsulta {
+  width: 100%;
+  background-color: #ffc107;
+}
 
-  #titulo, #precio, #categoria, #rating {
-    width: 100%;
-    background-color: #17a2b8;
-    color: #ffffff;
-  }
+#titulo,
+#precio,
+#categoria,
+#rating {
+  width: 100%;
+  background-color: #17a2b8;
+  color: #ffffff;
+}
 
-  #descripcion {
-    width: 100%;
-    resize: none;
-    background-color: turquoise;
-    color: #ffffff;
-  }
+#descripcion {
+  width: 100%;
+  resize: none;
+  background-color: turquoise;
+  color: #ffffff;
+}
 
-  #imagenProducto {
-    max-width: 100%;
-  }
-  
-  #imagen {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
+#imagenProducto {
+  max-width: 100%;
+}
+
+#imagen {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}

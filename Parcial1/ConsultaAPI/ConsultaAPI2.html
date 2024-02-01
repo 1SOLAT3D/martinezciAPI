@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Consulta API 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="ConsultaAPI2.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-group">
+      <label for="seleccionarPokemon">Selecciona un Pokémon:</label>
+      <select class="form-control" id="seleccionarPokemon"></select>
+    </div>
+    <div class="form-group">
+      <label for="alturaPokemon">Altura:</label>
+      <input type="text" class="form-control" id="alturaPokemon" readonly>
+    </div>
+    <div class="form-group">
+      <label for="pesoPokemon">Peso:</label>
+      <input type="text" class="form-control" id="pesoPokemon" readonly>
+    </div>
+    <button class="btn btn-success" id="btnPeticion">Obtener Pokémon</button>
+    <div>
+      <img src="" alt="Imagen del Pokémon" id="imagenPokemon">
+    </div>
+  </div>
+
+  <script>
+    const seleccionarPokemon = document.getElementById('seleccionarPokemon');
+    const alturaPokemonInput = document.getElementById('alturaPokemon');
+    const pesoPokemonInput = document.getElementById('pesoPokemon');
+    const imagenPokemon = document.getElementById('imagenPokemon');
+
+    document.getElementById('btnPeticion').addEventListener('click', () => {
+      const pokemonURL = seleccionarPokemon.value;
+
+      if (pokemonURL) {
+        fetch(pokemonURL)
+          .then(respuesta => {
+            if (respuesta.ok)
+              return respuesta.json();
+            else
+              throw new Error(respuesta.status);
+          })
+          .then(datos => {
+            console.log("Datos: ", datos);
+            alturaPokemonInput.value = datos.height;
+            pesoPokemonInput.value = datos.weight;
+            imagenPokemon.src = datos.sprites.front_default;
+          })
+          .catch(err => {
+            console.error("ERROR: ", err.message);
+          });
+      } else {
+        alert('Selecciona un Pokémon antes de obtener los detalles.');
+      }
+    });
+
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=5000")
+      .then(respuesta => {
+        if (respuesta.ok)
+          return respuesta.json();
+        else
+          throw new Error(respuesta.status);
+      })
+      .then(datos => {
+        console.log("Datos: ", datos);
+
+        datos.results.forEach(pokemon => {
+          const opcion = document.createElement('option');
+          opcion.value = pokemon.url;
+          opcion.textContent = pokemon.name;
+          seleccionarPokemon.appendChild(opcion);
+        });
+      })
+      .catch(err => {
+        console.error("ERROR: ", err.message);
+      });
+  </script>
+</body>
+
+</html>
