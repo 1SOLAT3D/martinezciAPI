@@ -23,7 +23,6 @@ app.get("/administrativos", (req, res) => {
   for (const campo in req.body) {
     console.log(req.body[campo]);
   }
-
   res.send("Respuesta GET del Servidor Express");
 });
 
