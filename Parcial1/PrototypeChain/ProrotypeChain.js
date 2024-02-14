@@ -25,40 +25,40 @@ var objeto = {
   console.log("\nBicicleta:");
   bicicleta.printInfo();
 
-//   Object.setPrototypeOf(coche, objeto);
-//   Object.setPrototypeOf(bicicleta, objeto);
+  Object.setPrototypeOf(coche, objeto);
+  Object.setPrototypeOf(bicicleta, objeto);
   
-//   Object.defineProperty(coche, "velocidad", {
-//     value: "150 Km/h",
-//     writable: true,
-//     enumerable: true,
-//     configurable: true,
-//   });
+  Object.defineProperty(coche, "velocidad", {
+    value: "150 Km/h",
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  });
   
-//   Object.defineProperty(bicicleta, "cadena", {
-//     value: "Si",
-//     writable: true,
-//     enumerable: true,
-//     configurable: true,
-//   });
+  Object.defineProperty(bicicleta, "cadena", {
+    value: "Si",
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  });
   
-//   console.log(
-//     "¿Coche tiene la propiedad 'velocidad' como propia?",
-//     coche.hasOwnProperty("velocidad")
-//   );
-//   console.log(
-//     "¿Bicicleta tiene la propiedad 'velocidad' como propia?",
-//     bicicleta.hasOwnProperty("velocidad")
-//   );
-//   console.log(
-//     "¿Coche tiene la propiedad 'cadena' como propia?",
-//     coche.hasOwnProperty("cadena")
-//   );
-//   console.log(
-//     "¿Bicicleta tiene la propiedad 'cadena' como propia?",
-//     bicicleta.hasOwnProperty("cadena")
-//   );
+  console.log(
+    "¿Coche tiene la propiedad 'velocidad' como propia?",
+    coche.hasOwnProperty("velocidad")
+  );
+  console.log(
+    "¿Bicicleta tiene la propiedad 'velocidad' como propia?",
+    bicicleta.hasOwnProperty("velocidad")
+  );
+  console.log(
+    "¿Coche tiene la propiedad 'cadena' como propia?",
+    coche.hasOwnProperty("cadena")
+  );
+  console.log(
+    "¿Bicicleta tiene la propiedad 'cadena' como propia?",
+    bicicleta.hasOwnProperty("cadena")
+  );
   
-//   console.log("objeto de coche:", Object.getPrototypeOf(coche));
-//   console.log("objeto de bicicleta:", Object.getPrototypeOf(bicicleta));
+  console.log("objeto de coche:", Object.getPrototypeOf(coche));
+  console.log("objeto de bicicleta:", Object.getPrototypeOf(bicicleta));
   
