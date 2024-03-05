@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Spotify</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">Información del Artista</h1>
+    
+    <div class="form-group">
+        <label for="idArtista">Ingrese el ID del Artista de Spotify:</label>
+        <input type="text" class="form-control" id="idArtista" placeholder="ID del Artista">
+    </div>
+
+    <button class="btn btn-primary mb-3" onclick="obtenerInfoArtista()">Obtener Información</button>
+
+    <div id="resultado"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
