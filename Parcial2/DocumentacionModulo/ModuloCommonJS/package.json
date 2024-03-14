@@ -4,7 +4,8 @@
   "description": "Ejercicio de creacion de modulos de Javascript  \r y publicacion en el registro de npm.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc -c jsdoc.json --readme README.MD"
   },
   "keywords": [],
   "author": "",
