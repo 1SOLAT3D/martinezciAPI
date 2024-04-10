@@ -1,0 +1,10 @@
+- paises:
+  - nombre: Estados Unidos
+    capital: Washington D.C.
+    poblacion: 331000000
+  - nombre: Canadá
+    capital: Ottawa
+    poblacion: 37740000
+  - nombre: México
+    capital: Ciudad de México
+    poblacion: 126200000
