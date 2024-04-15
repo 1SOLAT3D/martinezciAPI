@@ -6,8 +6,8 @@ const https = require("node:https");
 const fs = require("node:fs");
 
 const options = {
-  key: fs.readFileSync("test/fixtures/keys/agent2-key.pem"),
-  cert: fs.readFileSync("test/fixtures/keys/agent2-cert.pem"),
+  key: fs.readFileSync(__dirname + '/Certificado/key.pem'),
+  cert: fs.readFileSync(__dirname + '/Certificado/cert.pem'),
 };
 
 app.get("/", function (req, res) {
@@ -17,6 +17,6 @@ app.get("/", function (req, res) {
 https
   .createServer(options, (req, res) => {
     res.writeHead(200);
-    res.end("hello world\n");
+    res.end("Conexión Segura\n");
   })
   .listen(8000);
