@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^0.2.0"
+  },
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}
