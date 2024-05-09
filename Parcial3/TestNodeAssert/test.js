@@ -1,18 +1,8 @@
-import { modulo } from './modulo.js';
-import assert from 'assert';
+import assert from "node:assert";
+import test from "node:test";
+import * as area from "./modulo.js";
 
-function ejecutarPruebas() {
-    assert.strictEqual(modulo(10, 3), 1, "10 % 3 should be 1");
-
-    assert(isNaN(modulo(10, 0)), "Modulo by zero should return NaN");
-
-    assert.strictEqual(modulo(-10, 3), -1, "-10 % 3 should be -1");
-
-    assert.strictEqual(modulo(10, -3), 1, "10 % -3 should be 1");
-
-    assert.strictEqual(modulo(-10, -3), -1, "-10 % -3 should be -1");
-
-    console.log("Los test fueron superados");
-}
-
-ejecutarPruebas();
+test("Calcular area 30", () => {
+  let resultado = area.calcularArea(30);
+  assert.strictEqual(resultado, 2827.4333882308138);
+});
